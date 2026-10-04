@@ -1,57 +1,100 @@
-# Automated Healthcare Claims Data Testing Framework
+# Healthcare Claims Testing Framework
 
-A portfolio project that uses **Python, SQL, SQLite, pandas, and pytest** to test healthcare claims data quality and source-to-target integrity. All records are synthetic and contain no protected health information.
+## Overview
 
-## Business problem
+This project demonstrates how Python and SQL can be used to automate healthcare claims data validation and quality testing.
 
-Claims teams need reliable data before using it for payment, reporting, analytics, or machine learning. This project generates a clean source dataset, creates a warehouse copy with deliberate defects, runs reusable SQL controls, and exports an audit-friendly test report.
+The framework generates synthetic claims data, loads it into a SQLite database, executes automated SQL validation rules, and produces audit-ready PASS/FAIL reports.
 
-## Tests included
+## Business Problem
 
-- Missing member and claim identifiers
-- Duplicate claim IDs
-- Negative paid amounts
-- Invalid claim statuses
-- Submission dates before service dates
-- Paid amounts exceeding charges
-- Source-to-target row-count reconciliation
-- Automated query execution tests with pytest
+Healthcare organizations rely on accurate claims data for payment processing, member services, provider reporting, and analytics. Poor data quality can result in claim errors, payment delays, reporting inaccuracies, and compliance risks.
 
-## Project structure
+This project simulates a real-world healthcare claims testing process by identifying data quality issues before data reaches downstream systems.
 
-```text
-src/       data generation, database loading, validation engine
-sql/       standalone SQL quality checks
-tests/     pytest tests
-data/      synthetic source and target claims
-reports/   generated validation evidence
-```
+## Technologies Used
 
-## Quick start
+- Python
+- SQL
+- SQLite
+- Pandas
+- Pytest
+- Data Validation
+- Quality Assurance Testing
 
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
-python run_project.py
-pytest -v
-```
+## Project Workflow
 
-Open `reports/validation_results.csv` to see PASS/FAIL evidence. Failures are expected because the target data intentionally contains defects.
+Claims Data
+↓
+Python Data Generation
+↓
+SQLite Database
+↓
+SQL Validation Rules
+↓
+Automated Testing
+↓
+PASS / FAIL Report
 
-## Portfolio talking points
+## Validation Rules
 
-- Translated business rules into executable SQL controls.
-- Automated repeatable data-quality testing with Python.
-- Reconciled source and warehouse data after an ETL-style load.
-- Produced traceable results containing rule IDs, expected values, actual defects, status, and timestamps.
-- Designed the framework so additional claims rules can be added in `src/rules.py` without changing the validation engine.
+The framework automatically validates:
 
-## Suggested resume bullet
+- Missing Member IDs
+- Duplicate Claim IDs
+- Negative Payment Amounts
+- Invalid Claim Status Values
+- Invalid Date Sequences
+- Source-to-Target Record Counts
+- Missing Claim IDs
 
-Built an automated healthcare claims data-testing framework using Python, SQL, SQLite, pandas, and pytest; validated source-to-target completeness, business-rule accuracy, duplicates, nulls, financial integrity, and date sequencing while producing audit-ready PASS/FAIL reports.
+## Test Results
 
-## Safe-use note
+The warehouse dataset intentionally contains data quality defects to verify that validation rules successfully detect errors.
 
-The included data is synthetic. Do not place real member, patient, or claim information in a public portfolio repository.
+Results generated:
+
+- 8 Data Validation Rules Executed
+- 2 Rules Passed
+- 6 Rules Failed
+- Defects Successfully Identified
+
+## Pytest Automation Results
+
+The framework was tested using pytest to verify validation logic and execution.
+
+Result:
+
+- 2 Automated Tests Passed
+- 0 Automated Tests Failed
+
+## Screenshots
+
+### Validation Report
+
+screenshots/validation_report.png
+
+### Pytest Results
+
+screenshots/pytest_results.png
+
+## Skills Demonstrated
+
+- Python Programming
+- SQL Development
+- Healthcare Claims Analysis
+- Data Quality Testing
+- ETL Validation
+- Software Testing
+- Automation
+- Analytics
+
+## Resume Summary
+
+Built an automated healthcare claims testing framework using Python, SQL, SQLite, pandas, and pytest. Developed reusable validation rules to identify duplicates, missing values, claim-status issues, payment anomalies, and source-to-target discrepancies while generating audit-ready test reports.
+
+## Author
+
+Bruce Knox II
+BS Data Science
+Healthcare Claims Analyst | Data Analyst | QA Analyst
