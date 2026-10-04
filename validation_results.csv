@@ -1,0 +1,9 @@
+run_timestamp_utc,rule_id,test_name,expected_defects,actual_defects,status
+2026-10-03T23:08:45.509783+00:00,DQ001,Missing member ID,0,1,FAIL
+2026-10-03T23:08:45.509870+00:00,DQ002,Duplicate claim ID,0,1,FAIL
+2026-10-03T23:08:45.509899+00:00,DQ003,Negative paid amount,0,1,FAIL
+2026-10-03T23:08:45.509950+00:00,DQ004,Invalid claim status,0,1,FAIL
+2026-10-03T23:08:45.510003+00:00,DQ005,Submitted before service,0,1,FAIL
+2026-10-03T23:08:45.510028+00:00,DQ006,Paid exceeds charge,0,0,PASS
+2026-10-03T23:08:45.510056+00:00,DQ007,Source-to-target row count,0,1,FAIL
+2026-10-03T23:08:45.510087+00:00,DQ008,Null claim ID,0,0,PASS
